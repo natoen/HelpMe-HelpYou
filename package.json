@@ -1,13 +1,18 @@
 {
-  "name": "hrr14-hera",
+  "name": "ZeusCrew: helpme-helpyou",
   "version": "1.0.0",
-  "description": "\"help me, help me. social motivation app\"",
+  "description": "\"help me, help you. social motivation app\"",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hrr14-hera/hrr14-hera.git"
+    "url": "git+https://github.com/ZeusCrew/helpme-helpyou"
   },
   "author": "HRR14 Team Hera",
   "contributors": [
+    "Amanda Pattridge <alpattridge@gmail.com>",
+    "Andrew Vedady <drewvedady@gmail.com>",
+    "Frances Swiecki-Bernhardt <frances.swiecki@gmail.com>",
+    "Hiroshi Matsuda <hgmatsuda@gmail.com>",
+    "Sara Gee <sgee03@gmail.com>",
     "Aaron Hildebrand <aaron.hildebrand@gmail.com>",
     "Jesse Mavi <jesse.mavi@gmail.com>",
     "Kevin Chen <kevnchn@gmail.com>",
@@ -15,9 +20,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hrr14-hera/hrr14-hera/issues"
+    "url": "https://github.com/ZeusCrew/helpme-helpyou/issues"
   },
-  "homepage": "https://github.com/hrr14-hera/hrr14-hera#readme",
+  "homepage": "https://github.com/ZeusCrew/helpme-helpyou#readme",
   "scripts": {
     "start": "node server/server.js",
     "postinstall": "bower install && gulp deploy"

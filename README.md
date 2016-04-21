@@ -1,12 +1,16 @@
-# Help Me Help Me
+# Help Me Help You
 
 > Self-motivation is hard, so let your friends and loved ones help to keep you on track!
 
 ## Team
 
-  - __Product Owner__: Aaron Hildebrand
+  - __Product Owner__: Frances Swiecki-Bernhardt
+  - __Scrum Master__: Sara Gee
+  - __Development Team Members__: Amanda Pattridge Andrew Vedady, Hiroshi Matsuda
+
+<!--   - __Product Owner__: Aaron Hildebrand
   - __Scrum Master__: Kevin Chen
-  - __Development Team Members__: Rocky Murdoch
+  - __Development Team Members__: Rocky Murdoch -->
 
 ## Table of Contents
 
@@ -50,7 +54,7 @@ AUTH0_DOMAIN=yourAuth0Domain
 
 ### Roadmap
 
-View the project roadmap [here](https://github.com/hrr14-hera/hrr14-hera/issues)
+View the project roadmap [here](https://github.com/ZeusCrew/helpme-helpyou/issues)
 
 
 ## Contributing
