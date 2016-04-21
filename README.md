@@ -8,9 +8,7 @@
   - __Scrum Master__: Sara Gee
   - __Development Team Members__: Amanda Pattridge Andrew Vedady, Hiroshi Matsuda
 
-<!--   - __Product Owner__: Aaron Hildebrand
-  - __Scrum Master__: Kevin Chen
-  - __Development Team Members__: Rocky Murdoch -->
+  - __Project creators__: Aaron Hildebrand, Kevin Chen, Rocky Murdoch
 
 ## Table of Contents
 
