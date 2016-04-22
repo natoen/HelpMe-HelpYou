@@ -28,6 +28,30 @@ function Goals($http) {
         .then(function(res) {
           return res.data;
         });
+
+    },
+
+    //PUTs some new goal data in our MongoDB
+    updateGoal: function(user_id, goal) {
+      return $http({
+        method: 'PUT',
+        url: '/api/goals/' + user_id,
+        data: goal
+      })
+      .then(function(res) {
+        return res.data;
+      })
+    },
+
+    //DELETEs a goal from our MongoDB
+    deleteGoal: function(user_id, goal_id) {
+      return $http({
+        method: 'DELETE',
+        url: '/api/goals/' + user_id + '+' + goal_id,
+      })
+      .then(function(res) {
+        return res.data;
+      })
     }
   };
 }

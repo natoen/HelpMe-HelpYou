@@ -46,6 +46,35 @@ function GoalsController($scope, auth, Goals) {
     }
   };
 
+  // Mark a goal as completed
+  $scope.completeGoal = function(goalId) {
+    console.log(goalId);
+    var goal = {
+      _id: goalId,
+      complete: true
+    };
+    Goals.updateGoal($scope.profile.user_id, goal)
+      .then(function(data) {
+        $scope.getGoals();
+
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  };
+
+  // Delete a goal
+  $scope.deleteGoal = function(goalId) {
+    console.log($scope.profile.user_id)
+    Goals.deleteGoal($scope.profile.user_id, goalId)
+      .then(function(data) {
+        $scope.getGoals();
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  };
+
   // Once auth0 profile info has been set, query our database for user's goals
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
