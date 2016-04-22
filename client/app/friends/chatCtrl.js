@@ -18,7 +18,7 @@ function ChatController($scope, Socket, $uibModal, $log) {
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'chat.html',
-      controller: 'SocketInstanceCtrl',
+      controller: 'ChatInstanceCtrl',
       size: size
     });
   };
