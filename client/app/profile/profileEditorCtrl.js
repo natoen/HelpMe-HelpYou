@@ -1,6 +1,10 @@
 angular
-  .module('app.profile', [])
-  .controller('ProfileEditorCtrl', function ($scope, $uibModal, $log) {
+  .module('app.profileEdit', [])
+  .controller('ProfileEditorCtrl', ProfileEditorCtrl); 
+
+  ProfileEditorCtrl.$inject = ['$scope', '$uibModal', '$log'];
+
+  function ProfileEditorCtrl ($scope, $uibModal, $log) {
 
     $scope.items = ['item1', 'item2', 'item3'];
 
@@ -29,4 +33,4 @@ angular
     $scope.toggleAnimation = function () {
       $scope.animationsEnabled = !$scope.animationsEnabled;
     };
-  });
+  }

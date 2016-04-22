@@ -1,6 +1,10 @@
 angular
-  .module('app.profile', [])
-  .controller('ProfileFormCtrl', function ($scope, $uibModalInstance, items) {
+  .module('app.profileEdit', [])
+  .controller('ProfileFormCtrl', ProfileFormCtrl);
+
+  ProfileFormCtrl.$inject = ['$scope', '$uibModalInstance'];
+
+  function ProfileFormCtrl ($scope, $uibModalInstance, items) {
 
     $scope.items = items;
     $scope.selected = {
@@ -14,4 +18,4 @@ angular
     $scope.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };
-  });
+  };
