@@ -28,6 +28,19 @@ function Goals($http) {
         .then(function(res) {
           return res.data;
         });
+
+    },
+
+
+    updateGoal: function(user_id, goal) {
+      return $http({
+        method: 'PUT',
+        url: '/api/goals/' + user_id,
+        data: goal
+      })
+      .then(function(res) {
+        return res.data;
+      })
     }
   };
 }

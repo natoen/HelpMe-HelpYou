@@ -7,6 +7,7 @@ var GoalSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
   due_date: { type: Date },
+  complete: { type: Boolean, default: false },
   posts: [PostSchema]
 },
 {

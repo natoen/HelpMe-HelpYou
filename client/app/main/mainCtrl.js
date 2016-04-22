@@ -52,19 +52,24 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
     var currDate = new Date();
     var dateDiff = (currDate - goalDate)/3600000;
     if(friend) {
+      message.done="Your friend met their goal! Let them know they rock!!!"
       message.great="Your friend is doing great! Be sure to let them know!";
       message.good="It's been a couple of days since your friend updated their goal. Maybe cheer them on to get them motivated!";
       message.bad="It's been days since your friend updated their goal. Don't let them give up now!";
       message.terrible="Oh no!!! Your friend hasn't updated their goal in over a week. Are they ok? Be sure to check in with\
       them to see how they're doing!";
     } else {
+      message.done="You nailed it! That goal is toast!!!"
       message.great="Doing great! Keep it up!!!";
       message.good="It's been a couple of days since you updated this goal. Keep at it and post to your friends to let them know!";
       message.bad="It's been days since you updated this goal. Don't give up now! You can do it!";
       message.terrible="It's been more than a week since you last updated this goal. What happened?! Is everything ok? Be sure to \
       reach out to your friends for some support if you need it!";
     }
-    if(dateDiff < 24) {
+    if(goal.complete) {
+      goal.status = message.done;
+      goal.warn = false;
+    } else if(dateDiff < 24) {
       goal.status = message.great;
       goal.warn = false;
     } else if (dateDiff < 48) {
@@ -100,30 +105,36 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
     var currDate = new Date();
     var dateDiff = (currDate - goalDate)/60000;
     if(friend) {
+      message.done="Your friend met their goal! Let them know they rock!!!"
       message.great="Your friend is doing great! Be sure to let them know!";
       message.good="It's been more than 15 minutes since your friend updated their goal. Maybe cheer them on to get them motivated!";
       message.bad="It's over 30 minutes since your friend updated their goal. Don't let them give up now!";
       message.terrible="Oh no!!! Your friend hasn't updated their goal in over an hour. Are they ok? Be sure to check in with\
       them to see how they're doing!";
     } else {
+      message.done="You nailed it! That goal is toast!!!"
       message.great="Doing great! Keep it up!!!";
       message.good="It's been more than 15 minutes since you updated this goal. Keep at it and post to your friends to let them know!";
       message.bad="It's been over 30 minutes you updated this goal. Don't give up now! You can do it!";
       message.terrible="It's been more than an hour since you last updated this goal. What happened?! Is everything ok? Be sure to \
         reach out to your friends for some support if you need it!";
     }
-    if(dateDiff < 15) {
-        goal.status = message.great;
-        goal.warn = false;
-      } else if (dateDiff < 30) {
-        goal.status = message.good;
-        goal.warn = false;
-      } else if (dateDiff < 60) {
-        goal.status = message.bad;
-        goal.warn = true;
-      } else {
-        goal.status = message.terrible;
-        goal.warn = true;
+
+    if(goal.complete) {
+      goal.status = message.done;
+      goal.warn = false;
+    } else if(dateDiff < 15) {
+      goal.status = message.great;
+      goal.warn = false;
+    } else if (dateDiff < 30) {
+      goal.status = message.good;
+      goal.warn = false;
+    } else if (dateDiff < 60) {
+      goal.status = message.bad;
+      goal.warn = true;
+    } else {
+      goal.status = message.terrible;
+      goal.warn = true;
     }
   };
 

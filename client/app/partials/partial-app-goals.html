@@ -42,7 +42,7 @@
 
   <legend>Goals</legend>
   <!-- Panels for each of the user's existing goals -->
-  <div class="goal panel panel-primary"
+  <div class="goal panel" ng-class="goal.complete ? 'panel-success' : 'panel-primary' "
     ng-repeat="goal in user.goals | orderBy:'-updatedAt'">
     <!-- Panel heading with goal title and date of last update -->
     <div class="panel-heading">
@@ -50,6 +50,14 @@
         <div class="col-md-8">Title: {{goal.title}}</div>
         <div class="col-md-4">
           <span class="date">Updated <span am-time-ago="goal.updatedAt">{{goal.updatedAt}}</span></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-8">
+          <div class="btn-group-sm">
+            <button class="btn btn-success" ng-click="goal.complete || completeGoal(goal._id)">Complete</button>
+            <button class="btn btn-danger" ng-click="deleteGoal(goal._id)">Delete</button>
+          </div>
         </div>
       </div>
     </div>
