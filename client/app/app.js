@@ -14,10 +14,15 @@ angular
     'app.main',
     'app.viewfriend',
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'btford.socket-io',
+    'app.chat'
   ])
   .config(config)
-  .run(authCheck);
+  .run(authCheck)
+  .factory('Socket', ['socketFactory', function(socketFactory) {
+    return socketFactory();
+  }]);
 
 // Dependency injection. Done this way for minification purposes.
 // See https://docs.angularjs.org/tutorial/step_05 for more info on minification.
@@ -65,6 +70,9 @@ function config(authProvider, $stateProvider, $urlRouterProvider, $httpProvider,
       templateUrl: 'app/partials/partial-app-friends.html',
       controller: 'FriendsController',
       data: { requiresLogin: true }
+    })
+    .state('app.chat', {
+      parent: 'app.friends'
     })
     .state('app.profile', {
       url: '/profile',
