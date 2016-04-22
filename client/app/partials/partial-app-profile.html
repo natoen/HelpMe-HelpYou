@@ -17,6 +17,27 @@
         <label class="col-md-2">Username:</label>
         <p class="col-md-6">{{user.info.username}}</p>
       </div>
+      <div class="row">
+        <div ng-controller="ProfileEditorCtrl">
+          <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+              <h3 class="modal-title">I'm a modal!</h3>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li ng-repeat="item in items">
+                  <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+              </ul>
+                Selected: <b>{{ selected.item }}</b>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            </div>
+          </script>
+          <input class="btn btn-primary" type="submit" value="Edit Profile" ng-click="open()" />
+         </div>
+      </div>
     </div>
   </div>
 
