@@ -10,12 +10,11 @@ angular
 
     $scope.animationsEnabled = true;
 
-    $scope.open = function (size) {
+    $scope.open = function() {
       var modalInstance = $uibModal.open({
         animation: $scope.animationsEnabled,
-        templateUrl: 'myModalContent.html',
+        templateUrl: 'formEdit.html',
         controller: 'ProfileFormCtrl',
-        size: size,
         resolve: {
           items: function () {
             return $scope.items;
@@ -23,7 +22,7 @@ angular
         }
       });
 
-      modalInstance.result.then(function (selectedItem) {
+      modalInstance.result.then(function(selectedItem) {
         $scope.selected = selectedItem;
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());

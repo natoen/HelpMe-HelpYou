@@ -19,24 +19,26 @@
       </div>
       <div class="row">
         <div ng-controller="ProfileEditorCtrl">
-          <script type="text/ng-template" id="myModalContent.html">
+          <script type="text/ng-template" id="formEdit.html">
             <div class="modal-header">
-              <h3 class="modal-title">I'm a modal!</h3>
+              <h3 class="modal-title">Edit Profile</h3>
             </div>
             <div class="modal-body">
-              <ul>
-                <li ng-repeat="item in items">
-                  <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-                </li>
-              </ul>
-                Selected: <b>{{ selected.item }}</b>
+              <div class="row">
+                <label class="col-md-2 control-label">Edit Name:</label>
+                <div class="col-md-10">
+                <input class="form-control" type="text" placeholder="e.g. Jamie Smith">
+              </div>
             </div>
             <div class="modal-footer">
               <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+              <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
             </div>
           </script>
-          <input class="btn btn-primary" type="submit" value="Edit Profile" ng-click="open()" />
-         </div>
+          <div class="col-md-12">
+            <input class="btn btn-primary pull-right" type="submit" value="Edit Profile" ng-click="open()" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
