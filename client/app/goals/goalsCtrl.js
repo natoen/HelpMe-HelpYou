@@ -26,6 +26,8 @@ function GoalsController($scope, auth, Goals) {
   // Add a goal to the user's set of goals
   $scope.addGoal = function() {
     // Check to be sure the goal has a title
+    
+    ////Add post at the same time - user set a new goal, chain a post of the success.
     if($scope.input.title) {
       var goal = {
         title: $scope.input.title,

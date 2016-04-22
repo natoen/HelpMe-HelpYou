@@ -186,7 +186,7 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
     if($scope.input.post) {
       var post = {
         post: $scope.input.post,
-        goal_id: $scope.input.selected._id,
+        goal_id: $scope.input.selected._id
       };
       Profile.addPost($scope.profile.user_id, post)
         .then(function(data) {
@@ -198,6 +198,16 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
         .catch(function(error) {
           console.error(error);
         });
+    } else {
+      var post = {
+        post: "The user has created a new goal",
+        goal_id: $scope.input.selected._id
+      };
+      Profile.addPost($scope.profile.user_id, post)
+        .then(function(data) {
+          $scope.input.post = '';
+          // do we need to refresh goals?
+        })
     }
   };
 
