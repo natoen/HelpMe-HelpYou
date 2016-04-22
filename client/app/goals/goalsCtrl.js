@@ -65,12 +65,10 @@ function GoalsController($scope, auth, Goals) {
 
   // Delete a goal
   $scope.deleteGoal = function(goalId) {
-    var goal = {
-      _id: goalId
-    };
-    Goals.deleteGoal($scope.profile.user_id, goal)
+    console.log($scope.profile.user_id)
+    Goals.deleteGoal($scope.profile.user_id, goalId)
       .then(function(data) {
-        $scope.getGoals;
+        $scope.getGoals();
       })
       .catch(function(error) {
         console.error(error);
