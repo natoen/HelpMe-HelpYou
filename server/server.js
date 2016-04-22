@@ -2,6 +2,16 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+//socket.io connection
+io.on('connection', function (socket) {
+  console.log('A user has connected!');
+  socket.on('disconnect', function() {
+    console.log('A user has disconnected...');
+  });
+});
 
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/helpme';
 mongoose.connect(mongoURI);
@@ -18,7 +28,7 @@ require('./config/route.js')(app, express);
 
 var port = process.env.PORT || 3000;
 
-app.listen(port);
+server.listen(port);
 console.log('Server is running on ' + port);
 
 module.exports = app;

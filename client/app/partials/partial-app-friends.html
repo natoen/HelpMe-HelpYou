@@ -68,13 +68,33 @@
     <!-- Panel body with link to friend's profile and button to remove friend -->
     <div class="panel-body">
       <div class="row">
-        <a class="col-md-10" ui-sref="app.viewfriend({ friendID: friend.friend.auth_id })">
+        <a class="col-md-8" ui-sref="app.viewfriend({ friendID: friend.friend.auth_id })">
           {{friend.friend.firstname}} {{friend.friend.lastname}} ({{friend.friend.username}})</a>
-        <div class="col-md-2">
-          <button class="btn btn-primary" ng-click="removeFriend(friend.friend.auth_id)">Remove</button>
+        <div class="col-md-4">
+          <!-- Private chat window -->
+          <div ng-controller="ChatController">
+            <script type="text/ng-template" id="chat.html">
+              <div class="modal-header">
+                <h3 class="modal-title">Private Message</h3>
+              </div>
+              <div class="modal-body">
+                <input class="form-control" type="text" ng-model="privateMessage"
+                placeholder="Your message here...">
+                <button class="btn btn-primary btn-block" ng-click="">Send</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+              </div>
+            </script>
+            <!-- End chat window -->
+            <button class="btn btn-primary" ng-click="open()">Chat</button>
+            <button class="btn btn-primary" ng-click="removeFriend(friend.friend.auth_id)">Remove</button>
+          </div>
         </div>
       </div>
+    <!-- End of friends list -->
     </div>
   </div>
-
 </div>
