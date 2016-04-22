@@ -1,15 +1,20 @@
 {
   "name": "hrr14-hera",
-  "description": "\"help me, help me. social motivation app\"",
+  "description": "\"help me, help you. social motivation app\"",
   "main": "",
   "authors": [
+    "Amanda Pattridge <alpattridge@gmail.com>",
+    "Andrew Vedady <drewvedady@gmail.com>",
+    "Frances Swiecki-Bernhardt <frances.swiecki@gmail.com>",
+    "Hiroshi Matsuda <hgmatsuda@gmail.com>",
+    "Sara Gee <sgee03@gmail.com>",
     "Aaron Hildebrand <aaron.hildebrand@gmail.com>",
     "Jesse Mavi <jesse.mavi@gmail.com>",
     "Kevin Chen <kevnchn@gmail.com>",
     "Rocky Murdoch <rockysta009@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/hrr14-hera/hrr14-hera",
+  "homepage": "https://github.com/ZeusCrew/helpme-helpyou",
   "moduleType": [],
   "ignore": [
     "**/.*",
