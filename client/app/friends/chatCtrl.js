@@ -13,7 +13,7 @@ function ChatController($scope, Socket, $uibModal, $log) {
 
   $scope.animationsEnabled = true;
 
-  $scope.open = function (size) {
+  $scope.open = function(size) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
@@ -23,7 +23,7 @@ function ChatController($scope, Socket, $uibModal, $log) {
     });
   };
 
-  $scope.toggleAnimation = function () {
+  $scope.toggleAnimation = function() {
     $scope.animationsEnabled = !$scope.animationsEnabled;
   };
 };

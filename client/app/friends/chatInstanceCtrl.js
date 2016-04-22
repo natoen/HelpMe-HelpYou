@@ -4,13 +4,13 @@ angular
   
   ChatInstanceCtrl.$inject = ['$scope', '$uibModalInstance'];
   
-  function ChatInstanceCtrl ($scope, $uibModalInstance) {
+  function ChatInstanceCtrl($scope, $uibModalInstance) {
 
-  $scope.ok = function () {
+  $scope.ok = function() {
     $uibModalInstance.close();
   };
 
-  $scope.cancel = function () {
+  $scope.cancel = function() {
     $uibModalInstance.dismiss('cancel');
   };
 };
