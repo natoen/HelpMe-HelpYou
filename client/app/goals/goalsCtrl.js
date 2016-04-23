@@ -34,11 +34,10 @@ function GoalsController($scope, auth, Goals, Profile) {
       };
       Goals.addGoal($scope.profile.user_id, goal)
         .then(function(data) {
-          console.log(data);
           // Reset input fields to blank
           $scope.input.title = '';
           $scope.input.description = '';
-          //Add post at the same time, will now show automatically in main
+          //Add default post at the same time, will now show automatically in main
           var post = {
               post: 'I\'ve set a new goal',
               goal_id: data[data.length-1]._id

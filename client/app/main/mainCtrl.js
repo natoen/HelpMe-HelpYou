@@ -180,12 +180,6 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
       });
   };
 
-  // Add a post to a user's goal
-  $scope.$on('newGoal', function() {
-    console.log('one of the steps');
-    $scope.addPost();
-  });
-  
   $scope.addPost = function() {
     // Check to be sure the text field isn't empty
     if($scope.input.post) {
