@@ -25,7 +25,7 @@
     <legend class="section-toggle">Goals</legend>
   </a>
   <!-- Collapsible group of goals panels -->
-  <div class="goal panel panel-primary" uib-collapse="isGoalsClosed"
+  <div class="goal panel" ng-class="goal.complete ? 'panel-success' : 'panel-primary' " uib-collapse="isGoalsClosed"
     ng-repeat="goal in friend.goals | orderBy:'-updatedAt' | filter:search">
     <!-- Panel heading with goal title and date of last update -->
     <div class="panel-heading">
@@ -59,7 +59,7 @@
   </div>
 
   <!-- Panels for each of the friend's goal update posts -->
-  <div class="post panel panel-primary"
+  <div class="post panel" ng-class="goal.complete ? 'panel-success' : 'panel-primary' "
     ng-repeat="post in friend.posts | orderBy:'-createdAt' | filter:search">
     <!-- Panel heading with goal title and post date -->
     <div class="panel-heading">
