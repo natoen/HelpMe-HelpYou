@@ -8,6 +8,11 @@ var io = require('socket.io')(server);
 //socket.io connection
 io.on('connection', function (socket) {
   console.log('A user has connected!');
+
+  socket.on('message', function(data) {
+    io.emit('message', {username: data.username, message: data.message});
+  })
+
   socket.on('disconnect', function() {
     console.log('A user has disconnected...');
   });

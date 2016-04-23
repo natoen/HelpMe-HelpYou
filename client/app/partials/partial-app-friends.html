@@ -47,10 +47,10 @@
       <!-- Panel body with friend name and buttons for accepting and declining request -->
       <div class="panel-body">
         <div class="row">
-          <span class="col-md-9">
+          <span class="col-md-8">
             {{pending.friend.firstname}} {{pending.friend.lastname}} ({{pending.friend.username}})
           </span>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <button class="btn btn-primary"
               ng-click="answerFriendReq(pending.friend.auth_id, true)">Accept</button>
             <button class="btn btn-primary"
@@ -78,14 +78,15 @@
                 <h3 class="modal-title">Private Message</h3>
               </div>
               <div class="modal-body">
+                <ul>
+                  <li ng-repeat="data in messages">{{data.username}}: {{data.message}}</li>
+                </ul>
                 <input class="form-control" type="text" ng-model="privateMessage"
                 placeholder="Your message here...">
-                <button class="btn btn-primary btn-block" ng-click="">Send</button>
-                </div>
+                <button class="btn btn-primary btn-block" ng-click="sendMessage(privateMessage)">Send</button>
               </div>
               <div class="modal-footer">
-                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-warning" type="button" ng-click="ok()">Exit</button>
               </div>
             </script>
             <!-- End chat window -->
