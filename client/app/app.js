@@ -9,6 +9,7 @@ angular
     'app.profile',
     'app.profileEdit',
     'app.goals',
+    'app.goalEdit',
     'app.services',
     'app.controller',
     'app.friends',
