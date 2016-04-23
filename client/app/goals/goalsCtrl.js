@@ -54,7 +54,6 @@ function GoalsController($scope, auth, Goals, Profile) {
 
   // Mark a goal as completed
   $scope.completeGoal = function(goalId) {
-    console.log(goalId);
     var goal = {
       _id: goalId,
       complete: true
