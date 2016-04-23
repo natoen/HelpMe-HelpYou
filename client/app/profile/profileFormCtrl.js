@@ -2,10 +2,11 @@ angular
   .module('app.profileEdit')
   .controller('ProfileFormCtrl', ProfileFormCtrl);
 
-ProfileFormCtrl.$inject = ['$scope', '$uibModalInstance', 'auth', 'Profile'];
+ProfileFormCtrl.$inject = ['$scope', '$uibModalInstance', 'auth', 'Profile', '$window'];
 
-function ProfileFormCtrl($scope, $uibModalInstance, auth, Profile) { 
+function ProfileFormCtrl($scope, $uibModalInstance, auth, Profile, $window) { 
   $scope.newName = '';
+  console.log($scope)
 
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
@@ -26,8 +27,8 @@ function ProfileFormCtrl($scope, $uibModalInstance, auth, Profile) {
       firstname: $scope.newFirstName,
       lastname: $scope.newLastName
     };
-    
-    Profile.setProfile($scope.user_id, newUserData);
+
+    Profile.setProfile($scope.user_id, newUserData).then($window.location.reload());
     $uibModalInstance.close();
   };
 
