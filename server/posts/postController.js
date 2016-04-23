@@ -17,7 +17,21 @@ module.exports = {
   },
 
   updateProfile: function(req, res) {
-    // TO-DO: implement updating of profile info
+    var user_id = req.params.user_id;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+
+    User.findOne({ auth_id: user_id })
+      .then(function(user) {
+        if(firstname) {
+          user.firstname = firstname;
+        }
+        if(lastname) {
+          user.lastname = lastname;
+        }
+        user.save();
+        res.status(201).json(user);
+      });
   },
 
   getPosts: function(req, res) {
