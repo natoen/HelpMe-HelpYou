@@ -11,7 +11,7 @@
   </a>
   <!-- Collapsible group of recent goal status panels -->
   <div class="panel panel-default" uib-collapse="isRecentGoalsClosed"
-    ng-repeat="goal in user.goals | orderBy:'-updatedAt' | limitTo:3">
+    dir-paginate="goal in user.goals | filter: q | orderBy:'-updatedAt' | itemsPerPage: 1">
     <!-- Panel heading with goal title and date of last update -->
     <div class="panel-heading">
       <div class="row">
@@ -35,9 +35,14 @@
       </div>
       <div class="row">
         <label class="col-md-2">Latest Post:</label>
-        <div class="col-md-10" ng-repeat="post in goal.posts | orderBy:'-updatedAt' | limitTo:1">
+        <div class="col-md-10" ng-repeat="post in goal.posts | orderBy:'-updatedAt' | limitTo: 1">
           {{post.post}}</div>
       </div>
+    </div>
+    <div class="text-center">
+      <dir-pagination-controls
+      template-url="lib/angularUtils-pagination/dirPagination.tpl.html">
+      </dir-pagination-controls>
     </div>
   </div>
 
