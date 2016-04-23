@@ -17,12 +17,9 @@ module.exports = {
   },
 
   updateProfile: function(req, res) {
-    // console.log('in update profile')
     var user_id = req.params.user_id;
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
-    // var id = goal._id;
-    // delete goal._id; //so we don't cause problems
 
     User.findOne({ auth_id: user_id })
       .then(function(user) {

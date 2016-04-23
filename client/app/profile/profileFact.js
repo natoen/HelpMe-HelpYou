@@ -9,7 +9,6 @@ function Profile($http) {
   return {
     // GETs user profile info from our MongoDB
     getProfile: function(user_id) {
-      console.log('user ID', user_id)
       return $http({
           method: 'GET',
           url: '/api/profile/' + user_id
@@ -18,16 +17,14 @@ function Profile($http) {
           return res.data;
         });
     },
-    //PUTs new/edited data in profile
+    //POSTs new/edited data to user's profile
     setProfile: function(user_id, profileData) {
-      console.log('I am in set profile');
       return $http({
           method: 'POST',
           url: '/api/profile/' + user_id,
           data: profileData
         })
         .then(function(res) {
-          console.log('set user response', res.data)
           return res.data;
         });
     },
