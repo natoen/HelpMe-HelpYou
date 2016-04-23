@@ -9,7 +9,7 @@ function GoalEditController($scope, $uibModal, $log) {
   $scope.animationsEnabled = true;
 
   $scope.open = function() {
-
+    console.log('open me plz');
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'edit.html',
