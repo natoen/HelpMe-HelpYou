@@ -4,7 +4,7 @@ angular
 
   ProfileEditorCtrl.$inject = ['$scope', '$uibModal', '$log'];
 
-  function ProfileEditorCtrl ($scope, $uibModal, $log) {
+  function ProfileEditorCtrl($scope, $uibModal, $log) {
 
     $scope.items = ['item1', 'item2', 'item3'];
 
@@ -16,7 +16,7 @@ angular
         templateUrl: 'formEdit.html',
         controller: 'ProfileFormCtrl',
         resolve: {
-          items: function () {
+          items: function() {
             return $scope.items;
           }
         }
@@ -24,12 +24,12 @@ angular
 
       modalInstance.result.then(function(selectedItem) {
         $scope.selected = selectedItem;
-      }, function () {
+      }, function() {
         $log.info('Modal dismissed at: ' + new Date());
       });
     };
 
-    $scope.toggleAnimation = function () {
+    $scope.toggleAnimation = function() {
       $scope.animationsEnabled = !$scope.animationsEnabled;
     };
   }
