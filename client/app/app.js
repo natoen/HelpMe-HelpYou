@@ -7,6 +7,7 @@ angular
     'angular-jwt',
     'app.auth',
     'app.profile',
+    'app.profileEdit',
     'app.goals',
     'app.services',
     'app.controller',
@@ -79,6 +80,9 @@ function config(authProvider, $stateProvider, $urlRouterProvider, $httpProvider,
       templateUrl: 'app/partials/partial-app-profile.html',
       controller: 'ProfileController',
       data: { requiresLogin: true }
+    })
+    .state('app.profileEdit',{
+      parent: 'app.profile'
     })
     .state('app.viewfriend', {
       url: '/view/:friendID',
