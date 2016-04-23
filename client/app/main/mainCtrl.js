@@ -181,6 +181,11 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
   };
 
   // Add a post to a user's goal
+  $scope.$on('newGoal', function() {
+    console.log('one of the steps');
+    $scope.addPost();
+  });
+  
   $scope.addPost = function() {
     // Check to be sure the text field isn't empty
     if($scope.input.post) {
@@ -198,17 +203,6 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
         .catch(function(error) {
           console.error(error);
         });
-    } else {
-      console.log('111233j2l');
-      // var post = {
-      //   post: "The user has created a new goal",
-      //   goal_id: $scope.input.selected._id
-      // };
-      // Profile.addPost($scope.profile.user_id, post)
-      //   .then(function(data) {
-      //     $scope.input.post = '';
-      //     // do we need to refresh goals?
-      //   })
     }
   };
 
