@@ -1,6 +1,6 @@
 <!-- Fixed header -->
 <div class="navbar navbar-inverse">
-  <h3 class="header-text">Main</h3>
+  <h3 class="header-text">News Feed</h3>
 </div>
 
 <!-- Container for the rest of the page -->
@@ -79,10 +79,10 @@
 
   <!-- Toggle for collapsing inactive friends panels -->
   <a ng-click="isInactiveFriendsClosed = !isInactiveFriendsClosed">
-    <legend class="section-toggle">Inactive Friends Activity</legend>
+    <legend class="section-toggle">Least Active Friends</legend>
   </a>
   <!-- Collapsible group of inactive friends panels -->
-  <div class="panel panel-default" uib-collapse="isInactiveFriendsClosed"
+  <div class="panel panel-default" uib-collapse="!isInactiveFriendsClosed"
     ng-repeat="friend in friends | orderBy:'lastname'">
     <!-- Panel heading with link to friend's profile and date of last update -->
     <div class="panel-heading">
@@ -98,13 +98,12 @@
       </div>
     </div>
     <!-- Panel body alert with friend's goal status and latest post -->
-    <div class="alert" ng-class="{true: 'alert-danger', false: 'alert-success'}[friend.warn]">
+    <div class="panel-body" >
       <div class="row">
-        <label class="col-md-2">Status:</label>
-        <div class="col-md-10">{{friend.status}}</div>
+        <div class="col-md-12 small" ng-class="{true: 'text-danger', false: 'text-success'}[friend.warn]">{{friend.status}}</div>
       </div>
       <div class="row">
-        <label class="col-md-2">Latest Post:</label>
+        <label class="col-md-2 text-muted">Latest Post:</label>
         <div class="col-md-10">
           <strong>(Goal: {{friend.latestPost.goalTitle}}) </strong>
           {{friend.latestPost.post}}
