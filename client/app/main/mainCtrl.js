@@ -180,13 +180,12 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
       });
   };
 
-  // Add a post to a user's goal
   $scope.addPost = function() {
     // Check to be sure the text field isn't empty
     if($scope.input.post) {
       var post = {
         post: $scope.input.post,
-        goal_id: $scope.input.selected._id,
+        goal_id: $scope.input.selected._id
       };
       Profile.addPost($scope.profile.user_id, post)
         .then(function(data) {
