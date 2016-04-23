@@ -17,7 +17,8 @@ angular
     'ui.router',
     'ui.bootstrap',
     'btford.socket-io',
-    'app.chat'
+    'app.chat',
+    'angularUtils.directives.dirPagination'
   ])
   .config(config)
   .run(authCheck)
