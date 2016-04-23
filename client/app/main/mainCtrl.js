@@ -199,15 +199,16 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
           console.error(error);
         });
     } else {
-      var post = {
-        post: "The user has created a new goal",
-        goal_id: $scope.input.selected._id
-      };
-      Profile.addPost($scope.profile.user_id, post)
-        .then(function(data) {
-          $scope.input.post = '';
-          // do we need to refresh goals?
-        })
+      console.log('111233j2l');
+      // var post = {
+      //   post: "The user has created a new goal",
+      //   goal_id: $scope.input.selected._id
+      // };
+      // Profile.addPost($scope.profile.user_id, post)
+      //   .then(function(data) {
+      //     $scope.input.post = '';
+      //     // do we need to refresh goals?
+      //   })
     }
   };
 

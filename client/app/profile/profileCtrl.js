@@ -58,6 +58,8 @@ function ProfileController($scope, $timeout, auth, Profile) {
         .catch(function(error) {
           console.error(error);
         });
+    } else {
+      console.log('111233j2l');
     }
   };
 
