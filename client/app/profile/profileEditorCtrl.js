@@ -2,9 +2,9 @@ angular
   .module('app.profileEdit', [])
   .controller('ProfileEditorCtrl', ProfileEditorCtrl); 
 
-ProfileEditorCtrl.$inject = ['$scope', '$uibModal', '$log'];
+ProfileEditorCtrl.$inject = ['$scope', '$uibModal', '$log', 'Profile'];
 
-function ProfileEditorCtrl($scope, $uibModal, $log) {
+function ProfileEditorCtrl($scope, $uibModal, $log, Profile) {
 
   $scope.items = ['item1', 'item2', 'item3'];
 

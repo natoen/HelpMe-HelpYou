@@ -17,6 +17,18 @@ function Profile($http) {
           return res.data;
         });
     },
+    //PUTs new/edited data in profile
+    setProfile: function(user_id, profileData) {
+      console.log('I am in set profile');
+      // return $http({
+      //     method: 'PUT',
+      //     url: '/api/profile/' + user_id,
+      //     data: profileData
+      //   })
+      //   .then(function(res) {
+      //     return res.data;
+      //   });
+    },
 
     // GETs list of user's posts from our MongoDB
     getPosts: function(user_id) {
