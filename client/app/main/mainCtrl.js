@@ -1,5 +1,5 @@
 angular
-  .module('app.main', [])
+  .module('app.main', ['angularUtils.directives.dirPagination'])
   .controller('MainController', MainController);
 
 // Dependency injection. Done this way for minification purposes.
