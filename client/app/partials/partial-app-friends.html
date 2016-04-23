@@ -78,10 +78,12 @@
                 <h3 class="modal-title">Private Message</h3>
               </div>
               <div class="modal-body">
+                <ul>
+                  <li ng-repeat="message in messages">{{message}}</li>
+                </ul>
                 <input class="form-control" type="text" ng-model="privateMessage"
                 placeholder="Your message here...">
-                <button class="btn btn-primary btn-block" ng-click="">Send</button>
-                </div>
+                <button class="btn btn-primary btn-block" ng-click="sendMessage(privateMessage)">Send</button>
               </div>
               <div class="modal-footer">
                 <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
