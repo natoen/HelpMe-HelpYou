@@ -6,7 +6,6 @@ ProfileFormCtrl.$inject = ['$scope', '$uibModalInstance', 'auth', 'Profile', '$w
 
 function ProfileFormCtrl($scope, $uibModalInstance, auth, Profile, $window) { 
   $scope.newName = '';
-  console.log($scope)
 
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
