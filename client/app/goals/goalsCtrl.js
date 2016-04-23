@@ -39,8 +39,8 @@ function GoalsController($scope, auth, Goals, Profile) {
           $scope.input.description = '';
           //Add default post at the same time, will now show automatically in main
           var post = {
-              post: 'I\'ve set a new goal',
-              goal_id: data[data.length-1]._id
+            post: 'I\'ve set a new goal',
+            goal_id: data[data.length-1]._id
           };
           Profile.addPost($scope.profile.user_id, post)
           // Refresh goals
