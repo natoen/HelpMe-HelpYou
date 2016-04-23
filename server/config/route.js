@@ -1,6 +1,7 @@
 var goalController = require('../goals/goalController');
 var userController = require('../users/userController');
 var postController = require('../posts/postController');
+var achievementController = require('../achievements/achievementController');
 var helpers = require('./helper');
 
 module.exports = function(app, express) {
@@ -9,6 +10,10 @@ module.exports = function(app, express) {
     .post(goalController.addGoal)
     .put(goalController.updateGoal)
     .delete(goalController.deleteGoal);
+
+  app.route('/api/goals/:user_id')
+    .get(achievementController.getAchievements)
+    .post(achievementController.addAchievement);  
 
   app.route('/api/profile/:user_id')
     .get(postController.getProfile)
