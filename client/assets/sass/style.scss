@@ -11,6 +11,10 @@
   border-radius: 0;
 }
 
+html {
+  overflow-x: hidden;  
+}
+
 .nav-sidebar {
   display: none;
 }
@@ -205,7 +209,32 @@ line-height: normal;
   left: 50%;
   font-size: .8em
 }
+
 #signin {
   background-color: #3ea9f5;
   padding: 10px 20px 40px;
+}
+
+li {
+  list-style: none;
+}
+
+.chatname {
+  color: #77FFAA;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.chatmessage {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.chatsend {
+  margin-top: 10px;  
+}
+
+.chatbox {
+  max-height: 300px;
+  overflow-y: auto;
 }
