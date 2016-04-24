@@ -78,12 +78,15 @@
                 <h3 class="modal-title">Private Message</h3>
               </div>
               <div class="modal-body">
-                <ul>
-                  <li ng-repeat="data in messages">{{data.username}}: {{data.message}}</li>
+                <ul class="chatbox">
+                  <li ng-repeat="data in messages">
+                    <span class="chatname">{{data.username}}</span>: 
+                    <span class="chatmessage">{{data.message}}</span>
+                  </li>
                 </ul>
                 <input class="form-control" type="text" ng-model="privateMessage"
                 placeholder="Your message here...">
-                <button class="btn btn-primary btn-block" ng-click="sendMessage(privateMessage)">Send</button>
+                <button class="chatsend btn btn-primary btn-block" ng-click="sendMessage(privateMessage)">Send</button>
               </div>
               <div class="modal-footer">
                 <button class="btn btn-warning" type="button" ng-click="ok()">Exit</button>
