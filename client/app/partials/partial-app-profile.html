@@ -44,85 +44,13 @@
     </div>
   </div>
 
-  <!-- Form panel for submitting goal update posts -->
-  <div class="panel panel-default">
-    <form class="panel-body" ng-submit="addPost()">
-      <!-- Goal selection input -->
-      <div class="row">
-        <label class="col-md-2 control-label" for="goalSelect">Goal to Update:</label>
-        <div class="col-md-8">
-          <!-- Populates drop-down list of goals -->
-          <select class="form-control" id="goalSelect" ng-model="input.selected"
-            ng-options="goal.title for goal in user.goals track by goal._id">
-          </select>
-        </div>
-      </div>
-      <br>
-      <!-- Text input for update post -->
-      <div class="row">
-        <div class="col-md-10">
-          <input class="form-control" type="text" ng-model="input.post"
-            placeholder="Any progress lately? Share an update!">
-        </div>
-        <div class="col-md-2">
-          <input class="btn btn-primary" type="submit" value="Add Post" />
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <legend>Updates</legend>
-  <!-- Live search panel for filtering user posts -->
   <div class="panel panel-default">
     <div class="panel-body">
-      <input class="form-control" type="text" 
-        placeholder="Search your posts" ng-model="search" />
-    </div>
-  </div>
-
-  <!-- Panels for each of the user's goal update posts -->
-  <div class="post panel panel-primary" 
-    ng-repeat="post in user.posts | orderBy:'-createdAt' | filter:search">
-    <!-- Panel heading with goal title and post date -->
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col-md-8">Goal: {{post.goalTitle}}</div>
-        <div class="col-md-4">
-          <span class="date" am-time-ago="post.createdAt">{{post.createdAt}}</span>
-        </div>
-      </div>
-    </div>
-    <!-- Panel body with post text and toggle for collapsing comment display -->
-    <div class="panel-body">
-      <div class="post-text">{{post.post}}</div>
-      <a class="comment-toggle" ng-click="isAddCommentClosed = !isAddCommentClosed">
-        {{post.comments.length}} Comments</a>
-    </div>
-    <!-- Panel footer with collapsible comments and comment input form -->
-    <div class="panel-footer">
-      <!-- Collapsible group of comments -->
-      <div class="comments-all" uib-collapse="isAddCommentClosed">
-        <div class="comment row" ng-repeat="comment in post.comments | orderBy:'-updatedAt'">
-          <div class="comment-name col-md-4">{{comment.firstname}} {{comment.lastname}}</div>
-          <div class="col-md-9">{{comment.comment}}</div>
-          <div class="col-md-3">
-            <span class="date" am-time-ago="comment.createdAt">{{post.createdAt}}</span>
-          </div>
-        </div>
-      </div>
-      <!-- Comment input form -->
-      <div>
-        <form name="commentForm"
-          ng-submit="addComment(post._id, post.goal_id, input.comment[$index]);
-            input.comment[$index] = '';"
-          class="row">
-          <div class="col-md-10">
-            <input class="form-control" ng-model="input.comment[$index]"
-              placeholder="Write a comment..." />
-          </div>
-        </form>
+      <legend>Achievements</legend>
+      <div class="row" ng-repeat="achievement in profile.achievements">
+        <label class="col-md-6">{{achievement.name}}</label>
+        <div class="col-md-2"><img src="achievement.icon" alt="achievement.name"></div>
       </div>
     </div>
   </div>
-
 </div>
