@@ -11,6 +11,12 @@ function ChatController($scope, Socket, $uibModal, $log) {
     Socket.disconnect(true);
   });
 
+  $scope.chatFriend;
+
+  $scope.capture = function(friend) {
+    $scope.chatFriend = friend;
+  };
+
   $scope.animationsEnabled = true;
 
   $scope.open = function(size) {
@@ -19,7 +25,12 @@ function ChatController($scope, Socket, $uibModal, $log) {
       animation: $scope.animationsEnabled,
       templateUrl: 'chat.html',
       controller: 'ChatInstanceCtrl',
-      size: size
+      size: size,
+      resolve: {
+        current: function() {
+          return $scope.chatFriend;
+        }
+      }
     });
   };
 
