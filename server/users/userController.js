@@ -153,7 +153,7 @@ module.exports = {
     var userInfo = {
       auth_id: req.body.user_id,
       username: req.body.nickname,
-      firstname: req.body.given_name,
+      firstname: req.body.given_name || req.body.nickname,
       lastname: req.body.family_name
     };
     User.findOne({ auth_id: userInfo.auth_id })

@@ -7,6 +7,7 @@ ChatInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'Socket', 'auth', 'Pr
 function ChatInstanceCtrl($scope, $uibModalInstance, Socket, auth, Profile, current) {
   $scope.messages = [];
   $scope.chatFriend = current;
+  $scope.msgLoadingComplete = false;
 
   $scope.sendMessage = function(message) {
     if (message != false) {
@@ -16,18 +17,29 @@ function ChatInstanceCtrl($scope, $uibModalInstance, Socket, auth, Profile, curr
   };
 
   Socket.on('message', function(data) {
-    if (($scope.chatFriend === data.friend || $scope.chatFriend === data.username)
-      && ($scope.profile.nickname === data.username || $scope.profile.nickname === data.friend)) {
+    if (($scope.chatFriend === data.friend || $scope.chatFriend === data.username) &&
+        ($scope.profile.nickname === data.username || $scope.profile.nickname === data.friend)) {
       $scope.messages.push(data);
-    };
+    }
+  });
+
+  Socket.on('loadMessage', function(data) {
+    if (!$scope.msgLoadingComplete) {
+      $scope.messages.push(data);
+    }
+  });
+
+  Socket.on('msgLoadingComplete', function(data) {
+    $scope.msgLoadingComplete = data;
   });
 
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
+    Socket.emit('loadMessages', { username: $scope.profile.nickname, friend: $scope.chatFriend});
   });
 
   $scope.ok = function() {
     $uibModalInstance.close();
   };
 
-};
+}
