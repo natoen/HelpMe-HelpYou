@@ -7,4 +7,4 @@ LoginController.$inject = ['$scope', 'auth'];
 // Part of Auth0 basic login setup
 function LoginController($scope, auth) {
   $scope.auth = auth;
-};
+}
