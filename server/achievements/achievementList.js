@@ -25,6 +25,13 @@ module.exports = {
       description: "Delete five incomplete goals",
       target: "numDeletedIncomplete",
       quantity: 5,
+    }, {
+      name: "House Cleaning",
+      icon: "fiveDeleted.gif",
+      description: "Delete five complete goals",
+      target: "numDeletedComplete",
+      quantity: 5,
     },
+
   ]
-}
+};

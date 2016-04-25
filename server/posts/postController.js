@@ -10,7 +10,8 @@ module.exports = {
         var profile = {
           username: user.username,
           firstname: user.firstname,
-          lastname: user.lastname
+          lastname: user.lastname,
+          achievements: user.achievements,
         };
         res.status(200).json(profile);
       });

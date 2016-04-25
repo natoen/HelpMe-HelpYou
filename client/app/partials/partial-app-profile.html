@@ -47,9 +47,9 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <legend>Achievements</legend>
-      <div class="row" ng-repeat="achievement in profile.achievements">
+      <div class="row" ng-repeat="achievement in user.info.achievements">
         <label class="col-md-6">{{achievement.name}}</label>
-        <div class="col-md-2"><img src="achievement.icon" alt="achievement.name"></div>
+        <div class="col-md-2"><img src="{{achievement.icon}}" alt="{{achievement.name}}"></div>
       </div>
     </div>
   </div>
