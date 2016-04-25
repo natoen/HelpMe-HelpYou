@@ -23,7 +23,15 @@ function ChatInstanceCtrl($scope, $uibModalInstance, Socket, auth, Profile, curr
     }
   });
 
+  Socket.on('loadMessage', function(data) {
+    if ($scope.msgNotLoaded) {
+      $scope.messages.push(data);
+    }
+  });
 
+  Socket.on('msgNotLoaded', function(data) {
+    $scope.msgNotLoaded = data;
+  });
 
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
