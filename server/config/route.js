@@ -11,7 +11,7 @@ module.exports = function(app, express) {
     .put(goalController.updateGoal)
     .delete(goalController.deleteGoal);
 
-  app.route('/api/goals/:user_id')
+  app.route('/api/achievements/:user_id')
     .get(achievementController.getAchievements)
     .post(achievementController.addAchievement);  
 

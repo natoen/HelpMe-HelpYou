@@ -17,8 +17,12 @@ module.exports = {
 
     User.findOne({ auth_id: user_id })
       .then(function(user) {
-        user.achievements.push(achievement);
-        user.save();
+        for(var i = 0; i < user.achievements.length; i++) {
+          if (user.achievements[i].name !== achievement.name) {
+            user.achievements.push(achievement);
+            user.save();
+          }
+        }
         res.status(201).json(user.achievements);
       });
   },

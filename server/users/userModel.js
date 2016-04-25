@@ -12,6 +12,11 @@ var UserSchema = new Schema({
   lastname: { type: String },
   goals: [GoalSchema],
   achievements: [AchievementSchema],
+  numGoals: { type: Number, default: 0 },
+  numComplete: { type: Number, default: 0 },
+  numDeleted: { type: Number, default: 0 },
+  numCommentsPosted: { type: Number, default: 0 },
+  numCommentsGot: { type: Number, default: 0 },
   // mongoose-friends automatically adds the friends array below to the Schema
   // friends: [{
   //   added: The date the friendship request was first *created* (NOT accepted
