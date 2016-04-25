@@ -14,7 +14,8 @@ var UserSchema = new Schema({
   achievements: [AchievementSchema],
   numGoals: { type: Number, default: 0 },
   numComplete: { type: Number, default: 0 },
-  numDeleted: { type: Number, default: 0 },
+  numDeletedComplete: { type: Number, default: 0 },
+  numDeletedIncomplete: { type: Number, default: 0 },
   numCommentsPosted: { type: Number, default: 0 },
   numCommentsGot: { type: Number, default: 0 },
   // mongoose-friends automatically adds the friends array below to the Schema
