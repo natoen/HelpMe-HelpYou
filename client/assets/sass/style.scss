@@ -152,11 +152,15 @@ a:hover {
 }
 
 #landing {
-  color: white;
-  background: url(../images/success2.png);
-  background-size: cover;
-  height: 580px;
+  height: 95%;
   position: relative;
+}
+
+.landing-img {
+  background: url(../images/success2.png) fixed center;
+  width: 100%;
+  min-height: 980px;
+  max-height: 1320px;
 }
 
 .signinup{
@@ -180,13 +184,17 @@ line-height: normal;
 
 .textContainer {
   position: relative;
-  top: 12%;
+  top: 15%;
     float: none;
     margin: 0 auto;
 }
 
 #divider {
-  height: 300px;
+  position: absolute;
+  padding-top: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: #9AD5E8;
 }
 
@@ -197,6 +205,7 @@ line-height: normal;
 
 .CTA {
   color: white;
+  margin-top: 20%;
 }
 
 .infoBox {
@@ -209,7 +218,7 @@ line-height: normal;
 }
 
 .copyright {
-  margin-top: 10%;
+  margin-top: 8%;
   font-size: .8em;
 }
 
