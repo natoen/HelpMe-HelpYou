@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var friends = require('mongoose-friends');
 var GoalSchema = require('../goals/goalSchema.js');
+var AchievementSchema = require('../achievements/achievementSchema.js');
 
 var Schema = mongoose.Schema;
 
@@ -10,6 +11,13 @@ var UserSchema = new Schema({
   firstname: { type: String },
   lastname: { type: String },
   goals: [GoalSchema],
+  achievements: [AchievementSchema],
+  numGoals: { type: Number, default: 0 },
+  numComplete: { type: Number, default: 0 },
+  numDeletedComplete: { type: Number, default: 0 },
+  numDeletedIncomplete: { type: Number, default: 0 },
+  numCommentsPosted: { type: Number, default: 0 },
+  numCommentsGot: { type: Number, default: 0 },
   // mongoose-friends automatically adds the friends array below to the Schema
   // friends: [{
   //   added: The date the friendship request was first *created* (NOT accepted

@@ -1,4 +1,5 @@
 var User = require('../users/userModel.js');
+var Achievements = require('../achievements/achievementController.js');
 
 module.exports = {
   getGoals: function(req, res) {
@@ -18,6 +19,8 @@ module.exports = {
     User.findOne({ auth_id: user_id })
       .then(function(user) {
         user.goals.push(goal);
+        user.numGoals += 1;
+        Achievements.check(user);
         user.save();
         res.status(201).json(user.goals);
       });
@@ -33,7 +36,7 @@ module.exports = {
       .then(function(user) {
         for (var i = 0; i < user.goals.length; i++) {
           var g = user.goals[i];
-          if (g._id == id) {
+          if (g._id == id) { //because one of these is a string and the other is not
             for (var key in goal) {
               g[key] = goal[key];
             };
@@ -45,17 +48,19 @@ module.exports = {
   },
 
   deleteGoal: function(req, res) {
-    var params = req.params.user_id.split('+')
+    var params = req.params.user_id.split('+');
     var user_id = params[0];
     var goal_id = params[1];
 
     User.findOne({ auth_id: user_id })
       .then(function(user) {
-        console.log(user.goals);
         for (var i = 0; i < user.goals.length; i++) {
           var g = user.goals[i];
-          if (g._id == goal_id) {
+          if (g._id == goal_id) { //because one of these is a string and the other is not
             user.goals.splice(i, 1);
+            //if check weather or not they completed that goal and increment the appropriate counter
+            g.complete ? user.numDeletedComplete += 1 : user.numDeletedIncomplete += 1;
+            Achievements.check(user);
           }
         }
         user.save();

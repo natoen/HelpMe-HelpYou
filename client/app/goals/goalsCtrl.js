@@ -70,7 +70,6 @@ function GoalsController($scope, auth, Goals, Profile) {
 
   // Delete a goal
   $scope.deleteGoal = function(goalId) {
-    console.log($scope.profile.user_id)
     Goals.deleteGoal($scope.profile.user_id, goalId)
       .then(function(data) {
         $scope.getGoals();

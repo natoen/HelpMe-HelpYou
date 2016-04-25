@@ -49,6 +49,21 @@
     </div>
   </div>
 
+  <a ng-click="isAchievementsClosed = !isAchievementsClosed">
+    <legend class="section-toggle">Achievements</legend>
+  </a>
+  <div class="panel panel-default" uib-collapse="isAchievementsClosed">
+    <div class="panel-body">
+      <div class="row" ng-if="!friend.info.achievements.length">
+        <label class="col-md-12">Your friend doesn't have any achievements yet...</label>
+      </div>
+      <div class="row" ng-repeat="achievement in friend.info.achievements">
+        <label class="col-md-10">{{achievement.name}}</label>
+        <div class="col-md-2"><img class="sticker" src="../../assets/images/{{achievement.icon}}.gif" alt="{{achievement.name}}"></div>
+      </div>
+    </div>
+  </div>
+
   <legend>Updates</legend>
   <!-- Live search panel for filtering friend's posts -->
   <div class="panel panel-default">
