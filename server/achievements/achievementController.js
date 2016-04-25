@@ -2,15 +2,6 @@ var User = require('../users/userModel.js');
 var list = require('../achievements/achievementList.js');
 
 module.exports = {
-  getAchievements: function(req, res) {
-    var user_id = req.params.user_id;
-
-    User.findOne({ auth_id: user_id })
-      .then(function(user) {
-        var achievements = user.achievements;
-        res.status(200).json(achievements);
-      });
-  },
 
   check: function(user) {
     for (var i = 0; i < list.achievements.length; i ++) {
