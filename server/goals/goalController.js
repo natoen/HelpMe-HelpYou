@@ -61,7 +61,6 @@ module.exports = {
             //if check weather or not they completed that goal and increment the appropriate counter
             g.complete ? user.numDeletedComplete += 1 : user.numDeletedIncomplete += 1;
             Achievements.check(user);
-            console.log(user);
           }
         }
         user.save();

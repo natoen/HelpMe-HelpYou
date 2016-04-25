@@ -12,32 +12,24 @@ module.exports = {
       });
   },
 
-  // addAchievement: function(req, res) {
-  //   var user_id = req.params.user_id;
-
-  //   User.findOne({ auth_id: user_id })
-  //     .then(function(user) {
-  //       for(var i = 0; i < user.achievements.length; i++) {
-  //         if (user.achievements[i].name !== achievement.name) {
-  //           user.achievements.push(achievement);
-  //           user.save();
-  //         }
-  //       }
-  //       res.status(201).json(user.achievements);
-  //     });
-  // },
-
   check: function(user) {
     for (var i = 0; i < list.achievements.length; i ++) {
       var achievement = list.achievements[i];
       if (user[achievement.target] >= achievement.quantity) {
-        var newAcchievement = {
+        var newAchievement = {
           name: achievement.name,
           icon: achievement.icon,
           description: achievement.description,
         };
-        user.achievements.push(newAchievement);
-        console.log(user.achievements);
+        var found = false;
+        for (var j = 0; j < user.achievements.length; j++) {
+          if (user.achievements[j].name === newAchievement.name) {
+            found = true;
+          }
+        }
+        if (!found) {
+          user.achievements.push(newAchievement); 
+        }
       }
     }
 
