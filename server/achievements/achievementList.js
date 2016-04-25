@@ -3,31 +3,31 @@ module.exports = {
   achievements: [
     {
       name: "Goal Beginner",
-      icon: "oneGoal.gif",
+      icon: "oneGoal",
       description: "Post one goal",
       target: "numGoals",
       quantity: 1,
     }, {
       name: "Making a change",
-      icon: "fiveGoals.gif",
+      icon: "fiveGoals",
       description: "Post five goals",
       target: "numGoals",
       quantity: 5,
     }, {
       name: "Mission accomplished",
-      icon: "oneComplete.gif",
+      icon: "oneComplete",
       description: "Complete one goal",
       target: "numComplete",
       quantity: 1,
     }, {
       name: "Quitter",
-      icon: "fiveAbandoned.gif",
+      icon: "fiveAbandoned",
       description: "Delete five incomplete goals",
       target: "numDeletedIncomplete",
       quantity: 5,
     }, {
       name: "House Cleaning",
-      icon: "fiveDeleted.gif",
+      icon: "fiveDeleted",
       description: "Delete five complete goals",
       target: "numDeletedComplete",
       quantity: 5,
