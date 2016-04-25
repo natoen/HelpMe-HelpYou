@@ -47,9 +47,12 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <legend>Achievements</legend>
+      <div class="row" ng-if="!user.info.achievements.length">
+        <label class="col-md-8">When you have an achievement, it'll show up here!</label>
+      </div>
       <div class="row" ng-repeat="achievement in user.info.achievements">
         <label class="col-md-6">{{achievement.name}}</label>
-        <div class="col-md-2"><img src="{{achievement.icon}}" alt="{{achievement.name}}"></div>
+        <div class="col-md-2"><img class="sticker" src="../../assets/images/{{achievement.icon}}" alt="{{achievement.name}}"></div>
       </div>
     </div>
   </div>

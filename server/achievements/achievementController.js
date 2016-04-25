@@ -30,23 +30,14 @@ module.exports = {
   check: function(user) {
     for (var i = 0; i < list.achievements.length; i ++) {
       var achievement = list.achievements[i];
-      console.log(achievement.target, user[achievement.target], achievement.quantity)
       if (user[achievement.target] >= achievement.quantity) {
-        if (!user.achievements.length) {
-          user.achievements.push(achievement);
-        } else {
-          for (var i = 0; i < user.achievements.length; i++) {
-            if (user.achievements[i].name !== achievement.name) {
-              var newAcchievement = {
-                name: achievement.name,
-                icon: achievement.icon,
-                description: achievement.description,
-              };
-              user.achievements.push(newAchievement);
-              console.log('current achievements ', user.achievements);
-            }
-          }
-        }
+        var newAcchievement = {
+          name: achievement.name,
+          icon: achievement.icon,
+          description: achievement.description,
+        };
+        user.achievements.push(newAchievement);
+        console.log(user.achievements);
       }
     }
 

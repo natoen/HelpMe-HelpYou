@@ -54,9 +54,12 @@
   </a>
   <div class="panel panel-default" uib-collapse="isAchievementsClosed">
     <div class="panel-body">
+      <div class="row" ng-if="!friend.achievements.length">
+        <label class="col-md-8">Your friend doesn't have any achievements yet...</label>
+      </div>
       <div class="row" ng-repeat="achievement in friend.achievements">
         <label class="col-md-6">{{achievement.name}}</label>
-        <div class="col-md-2"><img src="achievement.icon" alt="achievement.name"></div>
+        <div class="col-md-2"><img class="badge" src="../../assets/images/{{achievement.icon}}" alt="achievement.name"></div>
       </div>
     </div>
   </div>
