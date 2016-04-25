@@ -153,12 +153,15 @@ a:hover {
 
 #landing {
   color: white;
-  background: url(//cdn.wistia.com/assets/free/free-new-pattern-ba392cfae92f42c129cd1bff10696d66.png);
-  background-color: #3ea9f5;
-  background-repeat: repeat;
-  background-size: 75%;
+  background: url(../images/success2.png);
+  background-size: cover;
   height: 580px;
   position: relative;
+}
+
+.signinup{
+  margin-top: 5%;
+  float: right;
 }
 
 .btn-xlg {
@@ -169,6 +172,7 @@ line-height: normal;
    -moz-border-radius: 8px;
         border-radius: 8px;
 }
+
 
 .signinContainer {
   position: relative;
@@ -184,12 +188,12 @@ line-height: normal;
 
 #divider {
   height: 300px;
+  background-color: #9AD5E8;
 }
 
 .logo {
-  position: relative;
-  top: 3%;
-  left: 3%;
+  margin-top: 1%;
+  float: left;
 }
 
 .CTA {
@@ -206,13 +210,8 @@ line-height: normal;
 }
 
 .copyright {
-  left: 50%;
+  margin-top: 10%;
   font-size: .8em
-}
-
-#signin {
-  background-color: #3ea9f5;
-  padding: 10px 20px 40px;
 }
 
 li {
@@ -238,3 +237,4 @@ li {
   max-height: 300px;
   overflow-y: auto;
 }
+
