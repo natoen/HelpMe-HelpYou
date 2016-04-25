@@ -36,7 +36,7 @@ io.on('connection', function (socket) {
           }
         }
 
-        io.emit('msgNotLoaded', false);
+        io.emit('msgLoadingComplete', true);
       });
 
   });
